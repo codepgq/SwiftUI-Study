@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD5650FC2421A89A00CD61ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5650FB2421A89A00CD61ED /* AppDelegate.swift */; };
+		CD5650FE2421A89A00CD61ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5650FD2421A89A00CD61ED /* SceneDelegate.swift */; };
+		CD5651022421A89B00CD61ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5651012421A89B00CD61ED /* Assets.xcassets */; };
+		CD5651052421A89B00CD61ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5651042421A89B00CD61ED /* Preview Assets.xcassets */; };
+		CD5651082421A89B00CD61ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5651062421A89B00CD61ED /* LaunchScreen.storyboard */; };
+		CD5651132421A89B00CD61ED /* SwiftUI_08Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651122421A89B00CD61ED /* SwiftUI_08Tests.swift */; };
+		CD56514C2421A8C400CD61ED /* HikeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56511D2421A8C300CD61ED /* HikeDetail.swift */; };
+		CD56514D2421A8C400CD61ED /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56511E2421A8C300CD61ED /* HikeBadge.swift */; };
+		CD56514E2421A8C400CD61ED /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56511F2421A8C300CD61ED /* LandmarkDetail.swift */; };
+		CD56514F2421A8C400CD61ED /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651202421A8C300CD61ED /* LandmarkList.swift */; };
+		CD5651502421A8C400CD61ED /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651222421A8C300CD61ED /* Data.swift */; };
+		CD5651512421A8C400CD61ED /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651232421A8C300CD61ED /* Profile.swift */; };
+		CD5651522421A8C400CD61ED /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651242421A8C300CD61ED /* UserData.swift */; };
+		CD5651532421A8C400CD61ED /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651252421A8C300CD61ED /* Hike.swift */; };
+		CD5651542421A8C400CD61ED /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651262421A8C300CD61ED /* Landmark.swift */; };
+		CD5651552421A8C400CD61ED /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651272421A8C300CD61ED /* CategoryRow.swift */; };
+		CD5651562421A8C400CD61ED /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651292421A8C300CD61ED /* GraphCapsule.swift */; };
+		CD5651572421A8C400CD61ED /* HikeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512A2421A8C300CD61ED /* HikeGraph.swift */; };
+		CD5651582421A8C400CD61ED /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512B2421A8C300CD61ED /* FeatureCard.swift */; };
+		CD5651592421A8C400CD61ED /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512C2421A8C300CD61ED /* RotatedBadgeSymbol.swift */; };
+		CD56515A2421A8C400CD61ED /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512D2421A8C300CD61ED /* MapView.swift */; };
+		CD56515B2421A8C400CD61ED /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512E2421A8C300CD61ED /* CircleImage.swift */; };
+		CD56515C2421A8C400CD61ED /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56512F2421A8C300CD61ED /* BadgeSymbol.swift */; };
+		CD56515D2421A8C400CD61ED /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651302421A8C300CD61ED /* BadgeBackground.swift */; };
+		CD56515E2421A8C400CD61ED /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651312421A8C300CD61ED /* LandmarkRow.swift */; };
+		CD56515F2421A8C400CD61ED /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651322421A8C300CD61ED /* Badge.swift */; };
+		CD5651602421A8C400CD61ED /* turtlerock_feature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651342421A8C300CD61ED /* turtlerock_feature.jpg */; };
+		CD5651612421A8C400CD61ED /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651352421A8C300CD61ED /* charleyrivers.jpg */; };
+		CD5651622421A8C400CD61ED /* turtlerock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651362421A8C300CD61ED /* turtlerock.jpg */; };
+		CD5651632421A8C400CD61ED /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651372421A8C300CD61ED /* silversalmoncreek.jpg */; };
+		CD5651642421A8C400CD61ED /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = CD5651382421A8C300CD61ED /* hikeData.json */; };
+		CD5651652421A8C400CD61ED /* icybay.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651392421A8C300CD61ED /* icybay.jpg */; };
+		CD5651662421A8C400CD61ED /* lakemcdonald.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD56513A2421A8C300CD61ED /* lakemcdonald.jpg */; };
+		CD5651672421A8C400CD61ED /* hiddenlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD56513B2421A8C300CD61ED /* hiddenlake.jpg */; };
+		CD5651682421A8C400CD61ED /* twinlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD56513C2421A8C300CD61ED /* twinlake.jpg */; };
+		CD5651692421A8C400CD61ED /* charleyrivers_feature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD56513D2421A8C300CD61ED /* charleyrivers_feature.jpg */; };
+		CD56516A2421A8C400CD61ED /* umbagog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD56513E2421A8C300CD61ED /* umbagog.jpg */; };
+		CD56516B2421A8C400CD61ED /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = CD56513F2421A8C300CD61ED /* landmarkData.json */; };
+		CD56516C2421A8C400CD61ED /* chincoteague.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651402421A8C300CD61ED /* chincoteague.jpg */; };
+		CD56516D2421A8C400CD61ED /* stmarylake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651412421A8C300CD61ED /* stmarylake.jpg */; };
+		CD56516E2421A8C400CD61ED /* chilkoottrail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651422421A8C300CD61ED /* chilkoottrail.jpg */; };
+		CD56516F2421A8C400CD61ED /* stmarylake_feature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651432421A8C300CD61ED /* stmarylake_feature.jpg */; };
+		CD5651702421A8C400CD61ED /* rainbowlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD5651442421A8C300CD61ED /* rainbowlake.jpg */; };
+		CD5651712421A8C400CD61ED /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651462421A8C400CD61ED /* ProfileSummary.swift */; };
+		CD5651722421A8C400CD61ED /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651472421A8C400CD61ED /* ProfileEditor.swift */; };
+		CD5651732421A8C400CD61ED /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651482421A8C400CD61ED /* ProfileHost.swift */; };
+		CD5651742421A8C400CD61ED /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651492421A8C400CD61ED /* HexagonParameters.swift */; };
+		CD5651752421A8C400CD61ED /* HikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56514A2421A8C400CD61ED /* HikeView.swift */; };
+		CD5651762421A8C400CD61ED /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56514B2421A8C400CD61ED /* Home.swift */; };
+		CD5651782421A90500CD61ED /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651772421A90500CD61ED /* PageViewController.swift */; };
+		CD56517A2421ACAC00CD61ED /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5651792421ACAC00CD61ED /* PageView.swift */; };
+		CD56517C2421BAE800CD61ED /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56517B2421BAE800CD61ED /* PageControl.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD56510F2421A89B00CD61ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5650F02421A89A00CD61ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD5650F72421A89A00CD61ED;
+			remoteInfo = "SwiftUI-08";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD5650F82421A89A00CD61ED /* SwiftUI-08.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-08.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5650FB2421A89A00CD61ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD5650FD2421A89A00CD61ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD5651012421A89B00CD61ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD5651042421A89B00CD61ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD5651072421A89B00CD61ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD5651092421A89B00CD61ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD56510E2421A89B00CD61ED /* SwiftUI-08Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-08Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5651122421A89B00CD61ED /* SwiftUI_08Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_08Tests.swift; sourceTree = "<group>"; };
+		CD5651142421A89B00CD61ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD56511D2421A8C300CD61ED /* HikeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeDetail.swift; sourceTree = "<group>"; };
+		CD56511E2421A8C300CD61ED /* HikeBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
+		CD56511F2421A8C300CD61ED /* LandmarkDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		CD5651202421A8C300CD61ED /* LandmarkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
+		CD5651222421A8C300CD61ED /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CD5651232421A8C300CD61ED /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CD5651242421A8C300CD61ED /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CD5651252421A8C300CD61ED /* Hike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		CD5651262421A8C300CD61ED /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		CD5651272421A8C300CD61ED /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		CD5651292421A8C300CD61ED /* GraphCapsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
+		CD56512A2421A8C300CD61ED /* HikeGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeGraph.swift; sourceTree = "<group>"; };
+		CD56512B2421A8C300CD61ED /* FeatureCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
+		CD56512C2421A8C300CD61ED /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
+		CD56512D2421A8C300CD61ED /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CD56512E2421A8C300CD61ED /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		CD56512F2421A8C300CD61ED /* BadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
+		CD5651302421A8C300CD61ED /* BadgeBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
+		CD5651312421A8C300CD61ED /* LandmarkRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
+		CD5651322421A8C300CD61ED /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		CD5651342421A8C300CD61ED /* turtlerock_feature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = turtlerock_feature.jpg; sourceTree = "<group>"; };
+		CD5651352421A8C300CD61ED /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
+		CD5651362421A8C300CD61ED /* turtlerock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = turtlerock.jpg; sourceTree = "<group>"; };
+		CD5651372421A8C300CD61ED /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
+		CD5651382421A8C300CD61ED /* hikeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hikeData.json; sourceTree = "<group>"; };
+		CD5651392421A8C300CD61ED /* icybay.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icybay.jpg; sourceTree = "<group>"; };
+		CD56513A2421A8C300CD61ED /* lakemcdonald.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakemcdonald.jpg; sourceTree = "<group>"; };
+		CD56513B2421A8C300CD61ED /* hiddenlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hiddenlake.jpg; sourceTree = "<group>"; };
+		CD56513C2421A8C300CD61ED /* twinlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twinlake.jpg; sourceTree = "<group>"; };
+		CD56513D2421A8C300CD61ED /* charleyrivers_feature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers_feature.jpg; sourceTree = "<group>"; };
+		CD56513E2421A8C300CD61ED /* umbagog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbagog.jpg; sourceTree = "<group>"; };
+		CD56513F2421A8C300CD61ED /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
+		CD5651402421A8C300CD61ED /* chincoteague.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chincoteague.jpg; sourceTree = "<group>"; };
+		CD5651412421A8C300CD61ED /* stmarylake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stmarylake.jpg; sourceTree = "<group>"; };
+		CD5651422421A8C300CD61ED /* chilkoottrail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chilkoottrail.jpg; sourceTree = "<group>"; };
+		CD5651432421A8C300CD61ED /* stmarylake_feature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stmarylake_feature.jpg; sourceTree = "<group>"; };
+		CD5651442421A8C300CD61ED /* rainbowlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbowlake.jpg; sourceTree = "<group>"; };
+		CD5651462421A8C400CD61ED /* ProfileSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
+		CD5651472421A8C400CD61ED /* ProfileEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		CD5651482421A8C400CD61ED /* ProfileHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
+		CD5651492421A8C400CD61ED /* HexagonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
+		CD56514A2421A8C400CD61ED /* HikeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HikeView.swift; sourceTree = "<group>"; };
+		CD56514B2421A8C400CD61ED /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CD5651772421A90500CD61ED /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		CD5651792421ACAC00CD61ED /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		CD56517B2421BAE800CD61ED /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD5650F52421A89A00CD61ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD56510B2421A89B00CD61ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD5650EF2421A89A00CD61ED = {
+			isa = PBXGroup;
+			children = (
+				CD5650FA2421A89A00CD61ED /* SwiftUI-08 */,
+				CD5651112421A89B00CD61ED /* SwiftUI-08Tests */,
+				CD5650F92421A89A00CD61ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD5650F92421A89A00CD61ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD5650F82421A89A00CD61ED /* SwiftUI-08.app */,
+				CD56510E2421A89B00CD61ED /* SwiftUI-08Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD5650FA2421A89A00CD61ED /* SwiftUI-08 */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651272421A8C300CD61ED /* CategoryRow.swift */,
+				CD5651492421A8C400CD61ED /* HexagonParameters.swift */,
+				CD56511E2421A8C300CD61ED /* HikeBadge.swift */,
+				CD56511D2421A8C300CD61ED /* HikeDetail.swift */,
+				CD56514A2421A8C400CD61ED /* HikeView.swift */,
+				CD56514B2421A8C400CD61ED /* Home.swift */,
+				CD56511F2421A8C300CD61ED /* LandmarkDetail.swift */,
+				CD5651202421A8C300CD61ED /* LandmarkList.swift */,
+				CD5651772421A90500CD61ED /* PageViewController.swift */,
+				CD5651212421A8C300CD61ED /* Models */,
+				CD5651452421A8C400CD61ED /* Profile */,
+				CD5651332421A8C300CD61ED /* Resources */,
+				CD5651282421A8C300CD61ED /* Supporting Views */,
+				CD5650FB2421A89A00CD61ED /* AppDelegate.swift */,
+				CD5650FD2421A89A00CD61ED /* SceneDelegate.swift */,
+				CD5651012421A89B00CD61ED /* Assets.xcassets */,
+				CD5651062421A89B00CD61ED /* LaunchScreen.storyboard */,
+				CD5651092421A89B00CD61ED /* Info.plist */,
+				CD5651032421A89B00CD61ED /* Preview Content */,
+				CD5651792421ACAC00CD61ED /* PageView.swift */,
+				CD56517B2421BAE800CD61ED /* PageControl.swift */,
+			);
+			path = "SwiftUI-08";
+			sourceTree = "<group>";
+		};
+		CD5651032421A89B00CD61ED /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651042421A89B00CD61ED /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD5651112421A89B00CD61ED /* SwiftUI-08Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651122421A89B00CD61ED /* SwiftUI_08Tests.swift */,
+				CD5651142421A89B00CD61ED /* Info.plist */,
+			);
+			path = "SwiftUI-08Tests";
+			sourceTree = "<group>";
+		};
+		CD5651212421A8C300CD61ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651222421A8C300CD61ED /* Data.swift */,
+				CD5651232421A8C300CD61ED /* Profile.swift */,
+				CD5651242421A8C300CD61ED /* UserData.swift */,
+				CD5651252421A8C300CD61ED /* Hike.swift */,
+				CD5651262421A8C300CD61ED /* Landmark.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD5651282421A8C300CD61ED /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651292421A8C300CD61ED /* GraphCapsule.swift */,
+				CD56512A2421A8C300CD61ED /* HikeGraph.swift */,
+				CD56512B2421A8C300CD61ED /* FeatureCard.swift */,
+				CD56512C2421A8C300CD61ED /* RotatedBadgeSymbol.swift */,
+				CD56512D2421A8C300CD61ED /* MapView.swift */,
+				CD56512E2421A8C300CD61ED /* CircleImage.swift */,
+				CD56512F2421A8C300CD61ED /* BadgeSymbol.swift */,
+				CD5651302421A8C300CD61ED /* BadgeBackground.swift */,
+				CD5651312421A8C300CD61ED /* LandmarkRow.swift */,
+				CD5651322421A8C300CD61ED /* Badge.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		CD5651332421A8C300CD61ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651342421A8C300CD61ED /* turtlerock_feature.jpg */,
+				CD5651352421A8C300CD61ED /* charleyrivers.jpg */,
+				CD5651362421A8C300CD61ED /* turtlerock.jpg */,
+				CD5651372421A8C300CD61ED /* silversalmoncreek.jpg */,
+				CD5651382421A8C300CD61ED /* hikeData.json */,
+				CD5651392421A8C300CD61ED /* icybay.jpg */,
+				CD56513A2421A8C300CD61ED /* lakemcdonald.jpg */,
+				CD56513B2421A8C300CD61ED /* hiddenlake.jpg */,
+				CD56513C2421A8C300CD61ED /* twinlake.jpg */,
+				CD56513D2421A8C300CD61ED /* charleyrivers_feature.jpg */,
+				CD56513E2421A8C300CD61ED /* umbagog.jpg */,
+				CD56513F2421A8C300CD61ED /* landmarkData.json */,
+				CD5651402421A8C300CD61ED /* chincoteague.jpg */,
+				CD5651412421A8C300CD61ED /* stmarylake.jpg */,
+				CD5651422421A8C300CD61ED /* chilkoottrail.jpg */,
+				CD5651432421A8C300CD61ED /* stmarylake_feature.jpg */,
+				CD5651442421A8C300CD61ED /* rainbowlake.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD5651452421A8C400CD61ED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CD5651462421A8C400CD61ED /* ProfileSummary.swift */,
+				CD5651472421A8C400CD61ED /* ProfileEditor.swift */,
+				CD5651482421A8C400CD61ED /* ProfileHost.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD5650F72421A89A00CD61ED /* SwiftUI-08 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD5651172421A89B00CD61ED /* Build configuration list for PBXNativeTarget "SwiftUI-08" */;
+			buildPhases = (
+				CD5650F42421A89A00CD61ED /* Sources */,
+				CD5650F52421A89A00CD61ED /* Frameworks */,
+				CD5650F62421A89A00CD61ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftUI-08";
+			productName = "SwiftUI-08";
+			productReference = CD5650F82421A89A00CD61ED /* SwiftUI-08.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD56510D2421A89B00CD61ED /* SwiftUI-08Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD56511A2421A89B00CD61ED /* Build configuration list for PBXNativeTarget "SwiftUI-08Tests" */;
+			buildPhases = (
+				CD56510A2421A89B00CD61ED /* Sources */,
+				CD56510B2421A89B00CD61ED /* Frameworks */,
+				CD56510C2421A89B00CD61ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD5651102421A89B00CD61ED /* PBXTargetDependency */,
+			);
+			name = "SwiftUI-08Tests";
+			productName = "SwiftUI-08Tests";
+			productReference = CD56510E2421A89B00CD61ED /* SwiftUI-08Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD5650F02421A89A00CD61ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = pq;
+				TargetAttributes = {
+					CD5650F72421A89A00CD61ED = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					CD56510D2421A89B00CD61ED = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = CD5650F72421A89A00CD61ED;
+					};
+				};
+			};
+			buildConfigurationList = CD5650F32421A89A00CD61ED /* Build configuration list for PBXProject "SwiftUI-08" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD5650EF2421A89A00CD61ED;
+			productRefGroup = CD5650F92421A89A00CD61ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD5650F72421A89A00CD61ED /* SwiftUI-08 */,
+				CD56510D2421A89B00CD61ED /* SwiftUI-08Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD5650F62421A89A00CD61ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5651642421A8C400CD61ED /* hikeData.json in Resources */,
+				CD5651702421A8C400CD61ED /* rainbowlake.jpg in Resources */,
+				CD56516E2421A8C400CD61ED /* chilkoottrail.jpg in Resources */,
+				CD5651612421A8C400CD61ED /* charleyrivers.jpg in Resources */,
+				CD56516A2421A8C400CD61ED /* umbagog.jpg in Resources */,
+				CD5651082421A89B00CD61ED /* LaunchScreen.storyboard in Resources */,
+				CD5651622421A8C400CD61ED /* turtlerock.jpg in Resources */,
+				CD5651052421A89B00CD61ED /* Preview Assets.xcassets in Resources */,
+				CD5651672421A8C400CD61ED /* hiddenlake.jpg in Resources */,
+				CD5651682421A8C400CD61ED /* twinlake.jpg in Resources */,
+				CD56516B2421A8C400CD61ED /* landmarkData.json in Resources */,
+				CD5651632421A8C400CD61ED /* silversalmoncreek.jpg in Resources */,
+				CD56516F2421A8C400CD61ED /* stmarylake_feature.jpg in Resources */,
+				CD5651662421A8C400CD61ED /* lakemcdonald.jpg in Resources */,
+				CD5651692421A8C400CD61ED /* charleyrivers_feature.jpg in Resources */,
+				CD56516D2421A8C400CD61ED /* stmarylake.jpg in Resources */,
+				CD5651022421A89B00CD61ED /* Assets.xcassets in Resources */,
+				CD5651652421A8C400CD61ED /* icybay.jpg in Resources */,
+				CD56516C2421A8C400CD61ED /* chincoteague.jpg in Resources */,
+				CD5651602421A8C400CD61ED /* turtlerock_feature.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD56510C2421A89B00CD61ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD5650F42421A89A00CD61ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD56514D2421A8C400CD61ED /* HikeBadge.swift in Sources */,
+				CD5650FC2421A89A00CD61ED /* AppDelegate.swift in Sources */,
+				CD5651722421A8C400CD61ED /* ProfileEditor.swift in Sources */,
+				CD5651762421A8C400CD61ED /* Home.swift in Sources */,
+				CD5651582421A8C400CD61ED /* FeatureCard.swift in Sources */,
+				CD56515F2421A8C400CD61ED /* Badge.swift in Sources */,
+				CD5651732421A8C400CD61ED /* ProfileHost.swift in Sources */,
+				CD5650FE2421A89A00CD61ED /* SceneDelegate.swift in Sources */,
+				CD56514F2421A8C400CD61ED /* LandmarkList.swift in Sources */,
+				CD5651592421A8C400CD61ED /* RotatedBadgeSymbol.swift in Sources */,
+				CD5651752421A8C400CD61ED /* HikeView.swift in Sources */,
+				CD5651532421A8C400CD61ED /* Hike.swift in Sources */,
+				CD56515A2421A8C400CD61ED /* MapView.swift in Sources */,
+				CD56515E2421A8C400CD61ED /* LandmarkRow.swift in Sources */,
+				CD5651742421A8C400CD61ED /* HexagonParameters.swift in Sources */,
+				CD5651562421A8C400CD61ED /* GraphCapsule.swift in Sources */,
+				CD5651552421A8C400CD61ED /* CategoryRow.swift in Sources */,
+				CD56514E2421A8C400CD61ED /* LandmarkDetail.swift in Sources */,
+				CD5651712421A8C400CD61ED /* ProfileSummary.swift in Sources */,
+				CD56514C2421A8C400CD61ED /* HikeDetail.swift in Sources */,
+				CD56515C2421A8C400CD61ED /* BadgeSymbol.swift in Sources */,
+				CD5651512421A8C400CD61ED /* Profile.swift in Sources */,
+				CD5651782421A90500CD61ED /* PageViewController.swift in Sources */,
+				CD5651522421A8C400CD61ED /* UserData.swift in Sources */,
+				CD56515D2421A8C400CD61ED /* BadgeBackground.swift in Sources */,
+				CD56517A2421ACAC00CD61ED /* PageView.swift in Sources */,
+				CD56515B2421A8C400CD61ED /* CircleImage.swift in Sources */,
+				CD56517C2421BAE800CD61ED /* PageControl.swift in Sources */,
+				CD5651502421A8C400CD61ED /* Data.swift in Sources */,
+				CD5651572421A8C400CD61ED /* HikeGraph.swift in Sources */,
+				CD5651542421A8C400CD61ED /* Landmark.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD56510A2421A89B00CD61ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5651132421A89B00CD61ED /* SwiftUI_08Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD5651102421A89B00CD61ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD5650F72421A89A00CD61ED /* SwiftUI-08 */;
+			targetProxy = CD56510F2421A89B00CD61ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD5651062421A89B00CD61ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD5651072421A89B00CD61ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD5651152421A89B00CD61ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD5651162421A89B00CD61ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD5651182421A89B00CD61ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-08/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ5TGFY9AN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SwiftUI-08/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pq.SwiftUI-08";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD5651192421A89B00CD61ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-08/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ5TGFY9AN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SwiftUI-08/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pq.SwiftUI-08";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD56511B2421A89B00CD61ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZ5TGFY9AN;
+				INFOPLIST_FILE = "SwiftUI-08Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pq.SwiftUI-08Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-08.app/SwiftUI-08";
+			};
+			name = Debug;
+		};
+		CD56511C2421A89B00CD61ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZ5TGFY9AN;
+				INFOPLIST_FILE = "SwiftUI-08Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pq.SwiftUI-08Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-08.app/SwiftUI-08";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD5650F32421A89A00CD61ED /* Build configuration list for PBXProject "SwiftUI-08" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5651152421A89B00CD61ED /* Debug */,
+				CD5651162421A89B00CD61ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD5651172421A89B00CD61ED /* Build configuration list for PBXNativeTarget "SwiftUI-08" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5651182421A89B00CD61ED /* Debug */,
+				CD5651192421A89B00CD61ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD56511A2421A89B00CD61ED /* Build configuration list for PBXNativeTarget "SwiftUI-08Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD56511B2421A89B00CD61ED /* Debug */,
+				CD56511C2421A89B00CD61ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD5650F02421A89A00CD61ED /* Project object */;
+}
