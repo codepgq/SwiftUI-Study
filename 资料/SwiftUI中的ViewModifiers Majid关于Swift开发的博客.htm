@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://swiftwithmajid.com/2019/08/07/viewmodifiers-in-swiftui/ -->
+<html lang="zh-CN" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="swift ios development apple watch iphone ipad swiftui uikit dev wwdc tutorial guide redux state container">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>SwiftUI中的ViewModifiers  Majid关于Swift开发的博客</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="ViewModifiers in SwiftUI">
+<meta name="author" content="Majid Jabrayilov">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="ViewModifiers play a significant role in SwiftUI. Most of the functions called on a View are ViewModifiers. It is the primary way of modifying the view instance in SwiftUI. In this post, we will take a look at some ready to use ViewModifiers, and then we will build our own custom ViewModifier.">
+<meta property="og:description" content="ViewModifiers play a significant role in SwiftUI. Most of the functions called on a View are ViewModifiers. It is the primary way of modifying the view instance in SwiftUI. In this post, we will take a look at some ready to use ViewModifiers, and then we will build our own custom ViewModifier.">
+<link rel="canonical" href="https://swiftwithmajid.com/2019/08/07/viewmodifiers-in-swiftui/">
+<meta property="og:url" content="https://swiftwithmajid.com/2019/08/07/viewmodifiers-in-swiftui/">
+<meta property="og:site_name" content="Majid’s blog about Swift development">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-08-07T00:00:00+00:00">
+<script async="" src="./SwiftUI中的ViewModifiers Majid关于Swift开发的博客_files/analytics.js"></script><script type="application/ld+json">
+{"@type":"BlogPosting","url":"https://swiftwithmajid.com/2019/08/07/viewmodifiers-in-swiftui/","headline":"ViewModifiers in SwiftUI","dateModified":"2019-08-07T00:00:00+00:00","datePublished":"2019-08-07T00:00:00+00:00","author":{"@type":"Person","name":"Majid Jabrayilov"},"description":"ViewModifiers play a significant role in SwiftUI. Most of the functions called on a View are ViewModifiers. It is the primary way of modifying the view instance in SwiftUI. In this post, we will take a look at some ready to use ViewModifiers, and then we will build our own custom ViewModifier.","mainEntityOfPage":{"@type":"WebPage","@id":"https://swiftwithmajid.com/2019/08/07/viewmodifiers-in-swiftui/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="./SwiftUI中的ViewModifiers Majid关于Swift开发的博客_files/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://swiftwithmajid.com/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="https://swiftwithmajid.com/public/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Majid关于Swift开发的博客" href="https://swiftwithmajid.com/feed.xml">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./SwiftUI中的ViewModifiers Majid关于Swift开发的博客_files/translateelement.css"></head>
+
+
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h1 class="masthead-title">
+          <a href="https://swiftwithmajid.com/" title="家"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Majid关于Swift开发的博客</font></font></a>
+        </h1>
+      </header>
+
+      <main>
+        <article class="post">
+  <h2 class="post-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI中的ViewModifiers</font></font></h2>
+  <time datetime="2019-08-07T00:00:00+00:00" class="post-date"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019年08月07日</font></font></time>
+  <p><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI中</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">扮演着重要的角色</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">在</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">View</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上</font><font style="vertical-align: inherit;">调用的大多数函数</font><font style="vertical-align: inherit;">都是</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">这是在</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中修改视图实例的主要方法</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">在本文中，我们将介绍一些准备使用的</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，然后我们将构建自己的自定义</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifier</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+
+<h4 id="custom-viewmodifier"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自定义ViewModifier</font></font></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">假设我们正在使用Github存储库搜索应用程序，并且我们需要一些</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视图</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以在搜索结果屏幕中显示单个存储库。</font><font style="vertical-align: inherit;">开始了。</font></font></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">RepoRow</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">repo</span><span class="p">:</span> <span class="kt">Repo</span><font></font>
+<font></font>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">headline</span><span class="p">)</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">description</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在上面的例子中，我们使用</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">像</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">foregroundColor</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">字体</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">我经常将这两个修饰符一起应用于任何副标题文本。</font><font style="vertical-align: inherit;">让我们创建一个自定义的ViewModifier，它将</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">前景色</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">字体</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">结合在一起。</font></font></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span><font></font>
+<font></font>
+<span class="kd">struct</span> <span class="kt">SubheadlineModifier</span><span class="p">:</span> <span class="kt">ViewModifier</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">body</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">Content</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="n">content</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">secondary</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们可以</font><font style="vertical-align: inherit;">通过创建符合</font><em><font style="vertical-align: inherit;">ViewModifier</font></em><font style="vertical-align: inherit;">协议</font><font style="vertical-align: inherit;">的结构</font><font style="vertical-align: inherit;">来创建自定义</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifier</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><em><font style="vertical-align: inherit;">ViewModifier</font></em><font style="vertical-align: inherit;">协议</font><font style="vertical-align: inherit;">的唯一要求</font><font style="vertical-align: inherit;">是主体功能。</font><font style="vertical-align: inherit;">它看起来与View协议非常相似，但是它接受原始视图作为函数参数，并返回修改后的视图。</font><font style="vertical-align: inherit;">现在，让我们看看如何在代码中使用新创建的修饰符。</font></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span><font></font>
+<font></font>
+<span class="kd">struct</span> <span class="kt">RepoRow</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">repo</span><span class="p">:</span> <span class="kt">Repo</span><font></font>
+<font></font>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">headline</span><span class="p">)</span>
+                <span class="kt">ModifiedContent</span><span class="p">(</span>
+                    <span class="nv">content</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">description</span> <span class="p">??</span> <span class="s">""</span><span class="p">),</span>
+                    <span class="nv">modifier</span><span class="p">:</span> <span class="kt">SubheadlineModifier</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">正如你所看到的例子，我们使用</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SubheadlineModifier</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过创建</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ModifiedContent</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">结构与原来的</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">景观</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SubheadlineModifier</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实例作为参数。</font></font></p>
+
+<h4 id="viewmodifiers-can-have-a-state-like-views"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers可以具有@State之类的Views</font></font></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers的</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个有趣的事实</font><font style="vertical-align: inherit;">是它符合View协议。</font><font style="vertical-align: inherit;">这意味着您可以在内部的</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">属性包装器中</font><font style="vertical-align: inherit;">使用</font><em><font style="vertical-align: inherit;">@ </font></em></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">State，@ Binding，@ Environment，@ ObservableObject和@EnvironmentObject</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">要了解有关</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供的属性包装器的更多信息</font><font style="vertical-align: inherit;">，请查看</font></font><a href="https://swiftwithmajid.com/2019/06/12/understanding-property-wrappers-in-swiftui/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“了解SwiftUI中的属性包装器”</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+
+<p><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Swift</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有很多很棒的库用于加载和缓存远程图像。</font><font style="vertical-align: inherit;">让我们将其中之一与</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">集成</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">我的大多数项目都使用</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kingfisher</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">库来加载和缓存远程图像，但目前不支持</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">我们将尝试通过创建</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifier</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来集成它，</font><font style="vertical-align: inherit;">并使用</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kingfisher</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加载远程图像</font><font style="vertical-align: inherit;">。</font></font></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kd">class</span> <span class="kt">Kingfisher</span><span class="o">.</span><span class="kt">KingfisherManager</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span><font></font>
+<font></font>
+<span class="kd">extension</span> <span class="kt">Image</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">fetchingRemoteImage</span><span class="p">(</span><span class="n">from</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ModifiedContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">modifier</span><span class="p">:</span> <span class="kt">RemoteImageModifier</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span><font></font>
+<font></font>
+<span class="kd">struct</span> <span class="kt">RemoteImageModifier</span><span class="p">:</span> <span class="kt">ViewModifier</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">fetchedImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><font></font>
+<font></font>
+    <span class="kd">func</span> <span class="nf">body</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="kt">Content</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">fetchedImage</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">eraseToAnyView</span><span class="p">()</span>
+        <span class="p">}</span><font></font>
+<font></font>
+        <span class="k">return</span> <span class="n">content</span>
+            <span class="o">.</span><span class="nf">onAppear</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="n">fetch</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">eraseToAnyView</span><span class="p">()</span>
+    <span class="p">}</span><font></font>
+<font></font>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">KingfisherManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">retrieveImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">fetchedImage</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">result</span><span class="o">.</span><span class="nf">get</span><span class="p">()</span><span class="o">.</span><span class="n">image</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span><font></font>
+<font></font>
+<span class="kd">extension</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">eraseToAnyView</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyView</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">AnyView</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如您在上面的示例中看到的，我们</font><font style="vertical-align: inherit;">在</font><em><font style="vertical-align: inherit;">RemoteImageModifier中</font></em><font style="vertical-align: inherit;">使用@ </font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">State</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">属性包装器</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">一旦我们为</font><em><font style="vertical-align: inherit;">fetchedImage</font></em><font style="vertical-align: inherit;">属性</font><font style="vertical-align: inherit;">设置了一些内容，</font><em><font style="vertical-align: inherit;">它就</font></em><font style="vertical-align: inherit;">提供了重新加载</font><em><font style="vertical-align: inherit;">View</font></em><font style="vertical-align: inherit;">的机会</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">我们还在此处创建一些实用程序方法，以简化新的</font><em><font style="vertical-align: inherit;">RemoteImageModifier</font></em><font style="vertical-align: inherit;">的使用</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">现在，我们可以轻松地将新的</font><em><font style="vertical-align: inherit;">ViewModifier</font></em><font style="vertical-align: inherit;">与任何</font><em><font style="vertical-align: inherit;">Image</font></em><font style="vertical-align: inherit;">一起</font><font style="vertical-align: inherit;">使用</font><font style="vertical-align: inherit;">以加载远程图像。</font></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">SwiftUI</span><font></font>
+<font></font>
+<span class="kd">struct</span> <span class="kt">RepoRow</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">repo</span><span class="p">:</span> <span class="kt">Repo</span><font></font>
+<font></font>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"photo"</span><span class="p">)</span> <span class="c1">// placeholder</span>
+                <span class="o">.</span><span class="nf">fetchingRemoteImage</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">repo</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">avatar</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">44</span><span class="p">)</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">headline</span><span class="p">)</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">description</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">subheadline</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="conclusion"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">结论</font></font></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">今天我们讨论了</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SwiftUI的</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另一个关键概念</font><font style="vertical-align: inherit;">。</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ViewModifiers</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">允许我们封装和重用</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">View中的</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任何逻辑</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">这是一个令人信服的概念，可用于构建应用程序的可组合部分。</font><font style="vertical-align: inherit;">尝试使用此方法，并与我分享您对此的想法。</font><font style="vertical-align: inherit;">请随时</font><font style="vertical-align: inherit;">在</font></font><a href="https://twitter.com/mecid"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Twitter上</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关注我，</font><font style="vertical-align: inherit;">并询问与该帖子有关的问题。</font><font style="vertical-align: inherit;">感谢您的阅读，下周见！</font></font></p>
+
+
+</article>
+
+
+<aside class="related">
+  <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最近的帖子</font></font></h4>
+  <ul class="related-posts">
+    
+      <li>
+        <a title="SwiftUI中的锚定首选项" href="https://swiftwithmajid.com/2020/03/18/anchor-preferences-in-swiftui/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          SwiftUI中的锚定首选项
+          </font></font><small><time datetime="2020-03-18T00:00:00+00:00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020年3月18日</font></font></time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a title="SwiftUI中的对齐指南" href="https://swiftwithmajid.com/2020/03/11/alignment-guides-in-swiftui/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          SwiftUI中的对齐指南
+          </font></font><small><time datetime="2020-03-11T00:00:00+00:00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020年3月11日</font></font></time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a title="在SwiftUI中自定义切换" href="https://swiftwithmajid.com/2020/03/04/customizing-toggle-in-swiftui/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          在SwiftUI中自定义切换
+          </font></font><small><time datetime="2020-03-04T00:00:00+00:00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020年3月4日</font></font></time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+          <img class="avatar" alt="友善的" width="100" height="100" data-proofer-ignore="true" src="./SwiftUI中的ViewModifiers Majid关于Swift开发的博客_files/mecid" srcset="https://avatars2.githubusercontent.com/mecid?v=3&amp;s=100 1x, https://avatars2.githubusercontent.com/mecid?v=3&amp;s=200 2x, https://avatars2.githubusercontent.com/mecid?v=3&amp;s=300 3x, https://avatars2.githubusercontent.com/mecid?v=3&amp;s=400 4x">
+          <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">嗨，您好！</font><font style="vertical-align: inherit;">我叫马吉德。</font></font></small>
+          <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我是Swift开发人员💻‍💻SwiftUI上瘾</font></font></small>
+          <font style="vertical-align: inherit;"><small><a href="https://cardiobotapp.com/"><font style="vertical-align: inherit;">🚀CardioBot</font></a></small><small><font style="vertical-align: inherit;">和</font></small><small><a href="https://napbotapp.com/"><font style="vertical-align: inherit;">NapBot</font></a></small><small><font style="vertical-align: inherit;">应用程序的</font></small></font><small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建者</font><font style="vertical-align: inherit;">。</font></font><a href="https://cardiobotapp.com/"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="https://napbotapp.com/"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></small>
+          <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请随时在</font></font><a href="https://twitter.com/mecid"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Twitter</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><a href="https://github.com/mecid"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Github</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上关注我</font><font style="vertical-align: inherit;">。</font></font></small>
+        <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          马贾德·贾布拉伊洛夫©</font></font><time datetime="2020-03-17T23:15:24+00:00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020年</font></font></time><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">版权所有。
+        </font></font></small>
+      </footer>
+    </div>
+
+    
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-18491817-18', 'auto');
+       ga('send', 'pageview');
+     </script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./SwiftUI中的ViewModifiers Majid关于Swift开发的博客_files/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+    
+  
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>

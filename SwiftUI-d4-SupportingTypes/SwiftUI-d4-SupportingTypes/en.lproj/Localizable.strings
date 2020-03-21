@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  SwiftUI-d4-SupportingTypes
+
+  Created by pgq on 2020/3/19.
+  Copyright © 2020 pq. All rights reserved.
+*/
+
+"Welcome into my app" = "Welcome into my app";
+"Start by tapping this button" = "Start by tapping this button";
+"Start browsing" = "Start browsing";
+"English"="English";
+"Chinese"="Chinese";
