@@ -14,6 +14,9 @@
 		CD3E51C12425F7FD001406E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD3E51C02425F7FD001406E5 /* Preview Assets.xcassets */; };
 		CD3E51C42425F7FD001406E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3E51C22425F7FD001406E5 /* LaunchScreen.storyboard */; };
 		CD3E51CF2425F7FD001406E5 /* SwiftUI_d16_FrameworkIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E51CE2425F7FD001406E5 /* SwiftUI_d16_FrameworkIntegrationTests.swift */; };
+		CD3E51DA242855B9001406E5 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E51D9242855B9001406E5 /* LyricsView.swift */; };
+		CD3E51DC242856C8001406E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3E51DB242856C8001406E5 /* Main.storyboard */; };
+		CD3E51DE24285984001406E5 /* HAHAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E51DD24285984001406E5 /* HAHAController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		CD3E51CA2425F7FD001406E5 /* SwiftUI-d16-FrameworkIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-d16-FrameworkIntegrationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD3E51CE2425F7FD001406E5 /* SwiftUI_d16_FrameworkIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_d16_FrameworkIntegrationTests.swift; sourceTree = "<group>"; };
 		CD3E51D02425F7FD001406E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3E51D9242855B9001406E5 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		CD3E51DB242856C8001406E5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CD3E51DD24285984001406E5 /* HAHAController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAHAController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		CD3E51B62425F7FC001406E5 /* SwiftUI-d16-FrameworkIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				CD3E51D9242855B9001406E5 /* LyricsView.swift */,
 				CD3E51B72425F7FC001406E5 /* AppDelegate.swift */,
 				CD3E51B92425F7FC001406E5 /* SceneDelegate.swift */,
 				CD3E51BB2425F7FC001406E5 /* ContentView.swift */,
@@ -86,6 +93,8 @@
 				CD3E51C22425F7FD001406E5 /* LaunchScreen.storyboard */,
 				CD3E51C52425F7FD001406E5 /* Info.plist */,
 				CD3E51BF2425F7FD001406E5 /* Preview Content */,
+				CD3E51DB242856C8001406E5 /* Main.storyboard */,
+				CD3E51DD24285984001406E5 /* HAHAController.swift */,
 			);
 			path = "SwiftUI-d16-FrameworkIntegration";
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				CD3E51C42425F7FD001406E5 /* LaunchScreen.storyboard in Resources */,
 				CD3E51C12425F7FD001406E5 /* Preview Assets.xcassets in Resources */,
 				CD3E51BE2425F7FD001406E5 /* Assets.xcassets in Resources */,
+				CD3E51DC242856C8001406E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3E51DA242855B9001406E5 /* LyricsView.swift in Sources */,
 				CD3E51B82425F7FC001406E5 /* AppDelegate.swift in Sources */,
 				CD3E51BA2425F7FC001406E5 /* SceneDelegate.swift in Sources */,
 				CD3E51BC2425F7FC001406E5 /* ContentView.swift in Sources */,
+				CD3E51DE24285984001406E5 /* HAHAController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
