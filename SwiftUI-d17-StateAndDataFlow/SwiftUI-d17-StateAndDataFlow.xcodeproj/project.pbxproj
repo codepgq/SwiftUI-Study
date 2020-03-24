@@ -21,6 +21,7 @@
 		CD3E52162428901E001406E5 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E52152428901E001406E5 /* ConfigView.swift */; };
 		CD3E52182428915C001406E5 /* EnvironmentValuesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E52172428915C001406E5 /* EnvironmentValuesExample.swift */; };
 		CD3E521A2428A387001406E5 /* GestureExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E52192428A387001406E5 /* GestureExampleView.swift */; };
+		CD3E5253242A0475001406E5 /* ComposingGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E5252242A0475001406E5 /* ComposingGestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CD3E52152428901E001406E5 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		CD3E52172428915C001406E5 /* EnvironmentValuesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExample.swift; sourceTree = "<group>"; };
 		CD3E52192428A387001406E5 /* GestureExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureExampleView.swift; sourceTree = "<group>"; };
+		CD3E5252242A0475001406E5 /* ComposingGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingGestures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				CD3E52152428901E001406E5 /* ConfigView.swift */,
 				CD3E52172428915C001406E5 /* EnvironmentValuesExample.swift */,
 				CD3E52192428A387001406E5 /* GestureExampleView.swift */,
+				CD3E5252242A0475001406E5 /* ComposingGestures.swift */,
 			);
 			path = "SwiftUI-d17-StateAndDataFlow";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				CD3E5214242863B6001406E5 /* EditView.swift in Sources */,
 				CD3E520E24286070001406E5 /* UserInfo.swift in Sources */,
 				CD3E51EC2428604A001406E5 /* AppDelegate.swift in Sources */,
+				CD3E5253242A0475001406E5 /* ComposingGestures.swift in Sources */,
 				CD3E521A2428A387001406E5 /* GestureExampleView.swift in Sources */,
 				CD3E51EE2428604A001406E5 /* SceneDelegate.swift in Sources */,
 				CD3E52162428901E001406E5 /* ConfigView.swift in Sources */,
